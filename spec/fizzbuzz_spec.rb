@@ -10,6 +10,10 @@ describe '#fizzbuzz' do
   end
 
   it 'should return FizzBuzz if a number is divisible by both 3 and 5' do
-    expect(fizzbuzz(15)). to eq('FizzBuzz')
+    expect(fizzbuzz(15)).to eq('FizzBuzz')
+  end
+
+  it 'should return the number if it is not divisible by 3 or 5' do
+    expect(fizzbuzz(2)).to eq(2)
   end
 end
