@@ -1,19 +1,19 @@
 require './lib/fizzbuzz'
 
 describe '#fizzbuzz' do
-  it 'should return Fizz if a number is divisible by 3' do
-    expect(fizzbuzz(6)).to eq('Fizz')
-  end
+  #returns fizz if number divisible by 3 
+  specify { expect { fizzbuzz(3) }.to output("1\n2\nFizz\n").to_stdout }
+  
 
-  it 'should return Buzz if a number is divisible by 5' do
-    expect(fizzbuzz(10)).to eq('Buzz')
-  end
+  #returns Buzz if a number is divisible by 5    
+  specify { expect { fizzbuzz(5) }.to output("1\n2\nFizz\n4\nBuzz\n").to_stdout }
 
-  it 'should return FizzBuzz if a number is divisible by both 3 and 5' do
-    expect(fizzbuzz(15)).to eq('FizzBuzz')
-  end
 
-  it 'should return the number if it is not divisible by 3 or 5' do
-    expect(fizzbuzz(2)).to eq(2)
-  end
+  #returns FizzBuzz if a number is divisible by both 3 and 5 
+  specify { expect { fizzbuzz(15) }.to output("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n").to_stdout }
+
+
+  # xit 'should return the number if it is not divisible by 3 or 5' do
+  specify { expect { fizzbuzz(2) }.to output("1\n2\n").to_stdout }
+  
 end
